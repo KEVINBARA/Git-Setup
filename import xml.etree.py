@@ -19,24 +19,24 @@ print("Origin:", origin)
 print("File Date:", file_date)
 print("---")
 
-# Access attributes of the <Order> element
-order = root.find('Order')
-execution_date = order.get('executionDate')
-beneficiary = order.get('beneficiary')
-order_origin = order.get('origin')
-print("Order attributes:")
-print("Execution Date:", execution_date)
-print("Beneficiary:", beneficiary)
-print("Origin:", order_origin)
-print("---")
+# Iterate over <Order> elements
+for order in root.findall('Order'):
+    # Access attributes of each <Order> element
+    execution_date = order.get('executionDate')
+    beneficiary = order.get('beneficiary')
+    order_origin = order.get('origin')
+    print("Order attributes:")
+    print("Execution Date:", execution_date)
+    print("Beneficiary:", beneficiary)
+    print("Origin:", order_origin)
 
-# Access child elements of the <OrderDetails> element
-order_details = order.find('OrderDetails')
-amount = order_details.find('Amount').text
-exponent = order_details.find('Exponent').text
-currency = order_details.find('Currency').text
-print("Order Details:")
-print("Amount:", amount)
-print("Exponent:", exponent)
-print("Currency:", currency)
-print("---")
+    # Access child elements of the <OrderDetails> element
+    order_details = order.find('OrderDetails')
+    amount = order_details.find('Amount').text
+    exponent = order_details.find('Exponent').text
+    currency = order_details.find('Currency').text
+    print("Order Details:")
+    print("Amount:", amount)
+    print("Exponent:", exponent)
+    print("Currency:", currency)
+    print("---")
