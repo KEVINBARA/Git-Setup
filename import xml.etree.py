@@ -40,3 +40,5 @@ for order in root.findall('Order'):
     print("Exponent:", exponent)
     print("Currency:", currency)
     print("---")
+    print("---")
+
